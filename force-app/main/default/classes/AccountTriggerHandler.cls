@@ -13,9 +13,9 @@ global without sharing class AccountTriggerHandler implements AfterUpdate, After
             accList.add(newAcc);
         }
 
-        MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',true);
+        //MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',true);
         update accList;
-        MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',false);
+        //MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',false);
 
     }
 

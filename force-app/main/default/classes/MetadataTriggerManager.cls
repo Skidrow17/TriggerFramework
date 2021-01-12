@@ -59,7 +59,7 @@ public without sharing class MetadataTriggerManager {
                 sObjectNameToEventsToTriggerHandlers.putAll(mockMetadata);
             } else {
                 sObjectNameToEventsToTriggerHandlers.putAll(
-                [SELECT DeveloperName, NamespacePrefix, Event__c, sObject__c, Class_Name__c, Order__c
+                [SELECT DeveloperName, NamespacePrefix, Event__c, sObject__c, Class_Name__c, Order__c, RunOnce__c
                 FROM Trigger_Handler__mdt
                 WHERE sObject__c = :sObjectName AND Active__c = true
                 ORDER BY Order__c ASC]);
@@ -103,6 +103,10 @@ public without sharing class MetadataTriggerManager {
 
             if(skippedTriggers.contains(thisTriggerHandler.DeveloperName)) {
                 continue;
+            }
+
+            if(thisTriggerHandler.RunOnce__c){
+                skippedTriggers.add(thisTriggerHandler.DeveloperName);
             }
             
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);
