@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+   <types>
+      <members>AccountTriggerHandler</members>
+      <members>AfterDelete</members>
+      <members>AfterInsert</members>
+      <members>AfterUndelete</members>
+      <members>AfterUpdate</members>
+      <members>BeforeDelete</members>
+      <members>BeforeInsert</members>
+      <members>BeforeUndelete</members>
+      <members>BeforeUpdate</members>
+      <members>MetadataTriggerManager</members>
+      <members>MetadataTriggerManagerTest</members>
+      <members>TriggerEventsToTriggerHandlers</members>
+      <members>TriggerObjectToEventsToHandlers</members>
+      <name>ApexClass</name>
+   </types>
+   <types>
+      <members>Trigger_Handler__mdt</members>
+      <name>CustomObject</name>
+   </types>
+   <types>
+      <members>*</members>
+      <name>CustomMetadata</name>
+   </types>
+<version>50.0</version>
+</Package>
