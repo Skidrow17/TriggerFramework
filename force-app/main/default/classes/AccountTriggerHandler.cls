@@ -3,17 +3,17 @@ global with sharing class AccountTriggerHandler implements AfterUpdate, AfterIns
     global void handleAfterUpdate(List<Account> oldList, List<Account> newList, Map<Id,sObject> oldMap, Map<Id,sObject> newMap) {
 
         // Implement my trigger logic
-        logic(newList);
+        logic('Update');
     }
 
     global void handleAfterInsert(List<Account> newList, Map<Id,sObject> newMap) {
 
         // Implement my trigger logic
-        logic(newList);
+        logic('Insert');
     }
 
-    private void logic(List<Account> accList){
-        System.debug('Hello World = '+accList);
+    private void logic(String event){
+        System.debug('Triggers Logic on '+event);
     }
 
 }
