@@ -16,6 +16,10 @@
       <name>ApexClass</name>
    </types>
    <types>
+      <members>*</members>
+      <name>ApexTrigger</name>
+   </types>
+   <types>
       <members>Trigger_Handler__mdt</members>
       <name>CustomObject</name>
    </types>
