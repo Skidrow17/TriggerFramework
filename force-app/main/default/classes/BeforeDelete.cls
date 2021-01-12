@@ -26,5 +26,5 @@
  */
 
 public interface BeforeDelete {
-    void handleBeforeDelete(List<sObject> oldList);
+    void handleBeforeDelete(List<sObject> oldList, Map<Id,sObject> oldMap);
 }

@@ -26,5 +26,5 @@
  */
 
 public interface AfterUndelete {
-    void handleAfterUndelete(List<sObject> newList);
+    void handleAfterUndelete(List<sObject> newList, Map<Id,sObject> newMap);
 }

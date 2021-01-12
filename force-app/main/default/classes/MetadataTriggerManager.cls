@@ -128,7 +128,7 @@ public without sharing class MetadataTriggerManager {
                     } else if(isInsert) {
                         ((BeforeInsert)handlerType.newInstance()).handleBeforeInsert(newList);
                     } else if(isDelete) {
-                        ((BeforeDelete)handlerType.newInstance()).handleBeforeDelete(oldList);
+                        ((BeforeDelete)handlerType.newInstance()).handleBeforeDelete(oldList, oldMap);
                     } else if(isUndelete) {
                         ((BeforeUndelete)handlerType.newInstance()).handleBeforeUndelete(newList);
                     }
@@ -138,9 +138,9 @@ public without sharing class MetadataTriggerManager {
                     } else if(isInsert) {
                         ((AfterInsert)handlerType.newInstance()).handleAfterInsert(newList, newMap);
                     } else if(isDelete) {
-                        ((AfterDelete)handlerType.newInstance()).handleAfterDelete(oldList);
+                        ((AfterDelete)handlerType.newInstance()).handleAfterDelete(oldList, oldMap);
                     } else if(isUndelete) {
-                        ((AfterUndelete)handlerType.newInstance()).handleAfterUndelete(newList);
+                        ((AfterUndelete)handlerType.newInstance()).handleAfterUndelete(newList, newMap);
                     }
                 }
             }

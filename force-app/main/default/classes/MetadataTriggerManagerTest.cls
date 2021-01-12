@@ -33,7 +33,7 @@ public class MetadataTriggerManagerTest {
     public class TestHandler implements AfterDelete, AfterInsert, AfterUndelete, AfterUpdate, BeforeDelete,
             BeforeInsert, BeforeUndelete, BeforeUpdate {
 
-        public void handleAfterDelete(List<Contact> oldList) {
+        public void handleAfterDelete(List<Contact> oldList, Map<Id,sObject> oldMap) {
             handle(oldList);
         }
 
@@ -41,7 +41,7 @@ public class MetadataTriggerManagerTest {
             handle(newList);
         }
 
-        public void handleAfterUndelete(List<Contact> newList) {
+        public void handleAfterUndelete(List<Contact> newList, Map<Id,sObject> newMap) {
             handle(newList);
         }
 
@@ -49,7 +49,7 @@ public class MetadataTriggerManagerTest {
             handle(newList);
         }
 
-        public void handleBeforeDelete(List<Contact> oldList) {
+        public void handleBeforeDelete(List<Contact> oldList, Map<Id,sObject> oldMap) {
             handle(oldList);
         }
 
