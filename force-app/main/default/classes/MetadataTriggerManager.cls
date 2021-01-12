@@ -46,6 +46,7 @@
 public without sharing class MetadataTriggerManager {
 
     public class ClassNotFoundException extends Exception {}
+    public static List<String> skipTrigger = new List<String>(); 
 
     @TestVisible
     private static List<Trigger_Handler__mdt> mockMetadata;
@@ -117,6 +118,9 @@ public without sharing class MetadataTriggerManager {
         }
 
         for(Trigger_Handler__mdt thisTriggerHandler : theseTriggerHandlers) {
+
+            if(skipTrigger.contains(thisTriggerHandler.DeveloperName)) continue;
+
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);
             Double start = System.Now().millisecond();
             System.debug('Trigger : '+thisTriggerHandler.DeveloperName+ ' Start');

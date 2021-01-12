@@ -12,8 +12,10 @@ global without sharing class AccountTriggerHandler implements AfterUpdate, After
             newAcc.Type = 'Prospect';
             accList.add(newAcc);
         }
-
+        
+        MetadataTriggerManager.skipTrigger.add('AccountTriggerHandlerAfterUpdate');
         update accList;
+
     }
 
     global void handleAfterInsert(List<Account> newList, Map<Id,sObject> newMap) {
