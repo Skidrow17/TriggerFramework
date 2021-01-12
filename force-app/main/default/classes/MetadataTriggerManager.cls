@@ -121,8 +121,6 @@ public without sharing class MetadataTriggerManager {
                         ((BeforeInsert)handlerType.newInstance()).handleBeforeInsert(newList);
                     } else if(isDelete) {
                         ((BeforeDelete)handlerType.newInstance()).handleBeforeDelete(oldList, oldMap);
-                    } else if(isUndelete) {
-                        ((BeforeUndelete)handlerType.newInstance()).handleBeforeUndelete(newList);
                     }
                 } else {
                     if(isUpdate) {

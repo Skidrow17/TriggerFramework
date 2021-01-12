@@ -31,7 +31,7 @@ public class MetadataTriggerManagerTest {
     public static Set<String> lastNamesSeen = new Set<String>();
 
     public class TestHandler implements AfterDelete, AfterInsert, AfterUndelete, AfterUpdate, BeforeDelete,
-            BeforeInsert, BeforeUndelete, BeforeUpdate {
+            BeforeInsert, BeforeUpdate {
 
         public void handleAfterDelete(List<Contact> oldList, Map<Id,sObject> oldMap) {
             handle(oldList);
@@ -57,9 +57,6 @@ public class MetadataTriggerManagerTest {
             handle(newList);
         }
 
-        public void handleBeforeUndelete(List<Contact> newList) {
-            handle(newList);
-        }
 
         public void handleBeforeUpdate(List<sObject> oldList, List<sObject> newList, Map<Id,sObject> oldMap, Map<Id,sObject> newMap) {
             handle(newList);
@@ -83,7 +80,6 @@ public class MetadataTriggerManagerTest {
                 'AfterUpdate' => new List<Boolean>{false, true, false, false, false},
                 'BeforeDelete' => new List<Boolean>{true, false, false, true, false},
                 'BeforeInsert' => new List<Boolean>{true, false, true, false, false},
-                'BeforeUndelete' => new List<Boolean>{true, false, false, false, true},
                 'BeforeUpdate' => new List<Boolean>{true, true, false, false, false}
         };
 
