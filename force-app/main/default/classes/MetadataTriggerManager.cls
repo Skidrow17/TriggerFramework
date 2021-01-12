@@ -118,7 +118,8 @@ public without sharing class MetadataTriggerManager {
 
         for(Trigger_Handler__mdt thisTriggerHandler : theseTriggerHandlers) {
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);
-            System.debug(thisTriggerHandler.DeveloperName+' / '+thisTriggerHandler);
+            Double start = System.Now().millisecond();
+            System.debug('Trigger : '+thisTriggerHandler.DeveloperName+ ' Start');
             if(handlerType == null) {
                 throw new ClassNotFoundException('MetaDataTriggerManager: handler class not found for ' + thisTriggerHandler);
             } else {
@@ -144,6 +145,7 @@ public without sharing class MetadataTriggerManager {
                     }
                 }
             }
+            System.debug('Trigger : '+thisTriggerHandler.DeveloperName+' End / Time Elapsed In Seconds : '+((System.Now().millisecond() - start) / 1000));
         }
     }
 }
