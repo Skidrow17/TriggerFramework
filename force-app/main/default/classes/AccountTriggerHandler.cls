@@ -6,7 +6,7 @@ global with sharing class AccountTriggerHandler implements AfterUpdate, AfterIns
         logic(newList);
     }
 
-    global void handleAfterInsert(List<Account> newList) {
+    global void handleAfterInsert(List<Account> newList, Map<Id,sObject> newMap) {
 
         // Implement my trigger logic
         logic(newList);

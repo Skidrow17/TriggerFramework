@@ -26,5 +26,5 @@
  */
 
 public interface AfterInsert {
-    void handleAfterInsert(List<sObject> newList);
+    void handleAfterInsert(List<sObject> newList, Map<Id,sObject> newMap);
 }

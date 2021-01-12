@@ -37,7 +37,7 @@ public class MetadataTriggerManagerTest {
             handle(oldList);
         }
 
-        public void handleAfterInsert(List<Contact> newList) {
+        public void handleAfterInsert(List<Contact> newList, Map<Id,sObject> newMap) {
             handle(newList);
         }
 
