@@ -1,10 +1,10 @@
 /**
- * @author: aidan@nebulaconsulting.co.uk
- * @date: 12/03/2018
+ * @author: silvansholla@gmail.com
+ * @date: 12/1/2021
  *
  * MIT License
  *
- * Copyright (c) 2018 Aidan Harding, Nebula Consulting
+ * Copyright (c) 2021 Sholla Silvan
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

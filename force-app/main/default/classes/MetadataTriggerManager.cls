@@ -1,28 +1,10 @@
 /**
- * @author: aidan@nebulaconsulting.co.uk
- * @date: 12/03/2018
- * @description: Use custom metadata to specify trigger handler classes to run, making the
- * 	actual triggers into one-line pieces of code.
- *
- * 	Example 1 (minimal code):
- *
- * trigger ContactTrigger on Contact (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
- * 	(new MetaDataTriggerManager()).handle();
- * }
- *
- * 	Example 2 (slightly more efficient as the object type is provided at compile-time):
- *
- * trigger ContactTrigger on Contact (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
- * 	(new MetaDataTriggerManager(Contact.sObjectType)).handle();
- * }
- *
- * 	Write your trigger handler by implementing the interfaces such as AfterInsert, then
- * 	link it to the trigger by creating a Trigger_Handler__mdt custom metadata record for each
- *	event when you handler needs to run.
+ * @author: silvansholla@gmail.com
+ * @date: 12/1/2021
  *
  * MIT License
  *
- * Copyright (c) 2018 Aidan Harding, Nebula Consulting
+ * Copyright (c) 2021 Sholla Silvan
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
