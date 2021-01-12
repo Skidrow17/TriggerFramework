@@ -61,7 +61,7 @@ public class MetadataTriggerManagerTest {
             handle(newList);
         }
 
-        public void handleBeforeUpdate(List<sObject> oldList, List<sObject> newList) {
+        public void handleBeforeUpdate(List<sObject> oldList, List<sObject> newList, Map<Id,sObject> oldMap, Map<Id,sObject> newMap) {
             handle(newList);
         }
 

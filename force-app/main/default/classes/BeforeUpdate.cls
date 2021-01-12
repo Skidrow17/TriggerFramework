@@ -26,5 +26,5 @@
  */
 
 public interface BeforeUpdate {
-    void handleBeforeUpdate(List<sObject> oldList, List<sObject> newList);
+    void handleBeforeUpdate(List<sObject> oldList, List<sObject> newList, Map<Id,sObject> oldMap, Map<Id,sObject> newMap);
 }
