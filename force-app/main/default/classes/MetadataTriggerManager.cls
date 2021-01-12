@@ -119,8 +119,10 @@ public without sharing class MetadataTriggerManager {
 
         for(Trigger_Handler__mdt thisTriggerHandler : theseTriggerHandlers) {
 
-            if(skippedTriggers.contains(thisTriggerHandler.DeveloperName)) continue;
-
+            if(skippedTriggers.contains(thisTriggerHandler.DeveloperName)) {
+                continue;
+            }
+            
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);
             Double start = System.Now().millisecond();
             Integer numberOfQueries = Limits.getQueries();
