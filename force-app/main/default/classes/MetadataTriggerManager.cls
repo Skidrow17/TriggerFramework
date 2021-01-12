@@ -106,7 +106,7 @@ public without sharing class MetadataTriggerManager {
             }
 
             if(thisTriggerHandler.RunOnce__c){
-                skippedTriggers.add(thisTriggerHandler.DeveloperName);
+                skipTrigger(thisTriggerHandler.DeveloperName,true);
             }
             
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);

@@ -87,7 +87,7 @@ public class MetadataTriggerManagerTest {
             mockMetaDataString += '{"DeveloperName": "TestHandler' + event + '", '
                     + '"NamespacePrefix": "",'
                     + '"Event__c": "' + event + '", '
-                    + '"sObject__c": "Contact", "Class_Name__c": "MetaDataTriggerManagerTest.TestHandler"},';
+                    + '"sObject__c": "Contact", "Class_Name__c": "MetaDataTriggerManagerTest.TestHandler", "RunOnce__c": true},';
         }
 
         mockMetaDataString = '[' + mockMetaDataString.substringBeforeLast(',') + ']';
