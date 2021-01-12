@@ -8,7 +8,6 @@
       <members>AfterUpdate</members>
       <members>BeforeDelete</members>
       <members>BeforeInsert</members>
-      <members>BeforeUndelete</members>
       <members>BeforeUpdate</members>
       <members>MetadataTriggerManager</members>
       <members>MetadataTriggerManagerTest</members>
