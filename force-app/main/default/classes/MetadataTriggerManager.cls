@@ -46,11 +46,11 @@
 public without sharing class MetadataTriggerManager {
 
     public class ClassNotFoundException extends Exception {}
-    public static List<String> skipTrigger = new List<String>(); 
 
     @TestVisible
     private static List<Trigger_Handler__mdt> mockMetadata;
 
+    private static Set<String> skippedTriggers = new Set<String>(); 
     private TriggerEventsToTriggerHandlers theseEventsToTriggerHandlers;
     private static TriggerObjectToEventsToHandlers sObjectNameToEventsToTriggerHandlers =
             new TriggerObjectToEventsToHandlers();
@@ -119,7 +119,7 @@ public without sharing class MetadataTriggerManager {
 
         for(Trigger_Handler__mdt thisTriggerHandler : theseTriggerHandlers) {
 
-            if(skipTrigger.contains(thisTriggerHandler.DeveloperName)) continue;
+            if(skippedTriggers.contains(thisTriggerHandler.DeveloperName)) continue;
 
             Type handlerType = Type.forName(thisTriggerHandler.NamespacePrefix, thisTriggerHandler.Class_Name__c);
             Double start = System.Now().millisecond();
@@ -150,6 +150,14 @@ public without sharing class MetadataTriggerManager {
                 }
             }
             System.debug('Trigger : '+thisTriggerHandler.DeveloperName+' End / Time Elapsed In Seconds : '+((System.Now().millisecond() - start) / 1000));
+        }
+    }
+
+    public static void skipTrigger(String triggerName, Boolean skip){
+        if(skip == true){
+            skippedTriggers.add(triggerName);
+        } else{
+            skippedTriggers.remove(triggerName);
         }
     }
 }

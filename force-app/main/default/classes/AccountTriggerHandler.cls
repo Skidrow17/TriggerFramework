@@ -12,9 +12,10 @@ global without sharing class AccountTriggerHandler implements AfterUpdate, After
             newAcc.Type = 'Prospect';
             accList.add(newAcc);
         }
-        
-        MetadataTriggerManager.skipTrigger.add('AccountTriggerHandlerAfterUpdate');
+
+        MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',true);
         update accList;
+        MetadataTriggerManager.skipTrigger('AccountTriggerHandlerAfterUpdate',false);
 
     }
 
