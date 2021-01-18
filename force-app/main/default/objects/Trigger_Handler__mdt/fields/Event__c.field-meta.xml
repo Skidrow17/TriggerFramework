@@ -28,11 +28,6 @@
                 <label>BeforeDelete</label>
             </value>
             <value>
-                <fullName>BeforeUndelete</fullName>
-                <default>false</default>
-                <label>BeforeUndelete</label>
-            </value>
-            <value>
                 <fullName>AfterInsert</fullName>
                 <default>false</default>
                 <label>AfterInsert</label>
