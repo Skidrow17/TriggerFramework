@@ -2,8 +2,6 @@ global without sharing class AccountTriggerHandler implements AfterUpdate, After
 
     global void handleAfterUpdate(List<Account> oldList, List<Account> newList, Map<Id,sObject> oldMap, Map<Id,sObject> newMap) {
 
-        // Implement my trigger logic
-        logic('Update');
         List<Account> accList = new List<Account>();
 
         for(Account acc : oldList){
@@ -20,13 +18,7 @@ global without sharing class AccountTriggerHandler implements AfterUpdate, After
     }
 
     global void handleAfterInsert(List<Account> newList, Map<Id,sObject> newMap) {
-
         // Implement my trigger logic
-        logic('Insert');
-    }
-
-    private void logic(String event){
-        System.debug('Triggers Logic on '+event);
     }
 
 }
